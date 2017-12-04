@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-border-right w3-black mybar" style="display:none" id="mySidebar">
+    <div class="options-box">
+        <button onclick="w3_close()" class="w3-button w3-black w3-xlarge w3-hover-black" onclick="w3_open()">
+            <div >
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </button>
+        <span class="text">Search for nearby</span>
+
+        <!--<ul data-bind="foreach: tmptitle"  id="list">-->
+        <ul data-bind="foreach: filterList" id="list">
+            <li>
+                <span class="text w3-hover-teal" data-bind="text: title, click: $parent.popInfo"></span><br>
+            </li>
+
+        </ul>
+
+        <div class="w3-center">
+            <input id="places-search" data-bind="value: userInput, valueUpdate: 'afterkeydown'" class="smltext" type="text"
+                   placeholder="Ex: Bar">
+            <!--<input id="go-places" data-bind="click: filterMarkers" class="w3-btn w3-teal w3-hover-grey w3-round"-->
+                   <!--type="button" value="Go">-->
+            <hr>
+        </div>
+        <div>
+            <input id="show-listings" class="w3-btn w3-teal w3-hover-grey w3-round" type="button" value="Show Markers">
+            <input id="hide-listings" class="w3-button w3-teal w3-hover-grey w3-round" type="button"
+                   value="Hide Markers">
+        </div>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-black">
+    <button class="w3-button w3-black w3-xlarge w3-hover-black" onclick="w3_open()">
+        <div>
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </button>
+    <span class="lgtext">&nbsp;Map&nbsp;</span>
+    <div class="w3-container">
+    </div>
+</div>
+<div id="map"></div>
+
+<script src="js/knockout-3.4.2.js"></script>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/slidebar.js"></script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyBr3QOQfS8ej0KA7hHMNnkBCdKsR_AM_aU&callback=StartApp" onerror="googleError()">
+</script>
+
+
+</body>
+</html>
