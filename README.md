@@ -11,3 +11,7 @@ Through this project, I am more familiar with MVVM pattern by implementing Knock
 1. [Live](https://www.vagrantup.com/) 
 
 ![Alt text](https://github.com/x467chen/Google-Map-Filter/blob/master/demo/demo.jpg "Optional title")
+
+## API Reference
+1. Implemented Google Maps API to generate the map, markers and infowindows. 
+2. Implemented Foursquare Place API to search more infomation about the markers.
