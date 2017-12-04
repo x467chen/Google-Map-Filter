@@ -8,12 +8,11 @@ This application is a single page featuring a map of my neighborhood which has t
 Through this project, I am more familiar with MVVM pattern by implementing Knockout frameworks and also familiar with bunch of Javascript libraries such as jQuery. Besides, this application is complex enough and incorporates a variety of data points that it can easily become unwieldy to manage. 
 
 ## Installation
-1. [Live Demo](https://x467chen.github.io/Google-Map-Filter/) 
-2.Clone the github repository using the cmd:
+1. Explore [Live Demo](https://x467chen.github.io/Google-Map-Filter/) and clone the github repository using the cmd:
 ``` xml
 git clone https://github.com/x467chen/Google-Map-Filter
 ```
-3. Open the index.html(Make sure the Wifi is working, otherwise it will cause error to grab data from APIs)
+2. Open the index.html(Make sure the Wifi is working, otherwise it will cause error to grab data from APIs)
 
 ![Alt text](https://github.com/x467chen/Google-Map-Filter/blob/master/demo/demo.jpg "Optional title")
 
