@@ -155,6 +155,7 @@ function initMap() {
         marker.addListener('click', function () {
             popInfoWindow(this, largeInfowindow);
         });
+        
         //listeners for mouseover, change the colors red
         marker.addListener('mouseover', function () {
             this.setIcon(highlightedIcon);
@@ -164,10 +165,7 @@ function initMap() {
             this.setIcon(defaultIcon);
         });
     }
-
     showListings(markers);
-    document.getElementById('show-listings').addEventListener('click', showListings);
-    document.getElementById('hide-listings').addEventListener('click', hideListings);
 }
 
 
@@ -179,10 +177,7 @@ function popInfoWindow(marker, infowindow) {
     this.long = marker.position.lng().toFixed(2);
     this.title = marker.title;
 
-    var URL = 'https://api.foursquare.com/v2/venues/search?client_id='
-        + CLIENT_ID + '&client_secret=' + CLIENT_SECRET
-        + '&ll=' + this.lat + ',' + this.long + '&query='
-        + this.title + '&v=20170801';
+    var URL = 'https://api.foursquare.com/v2/venues/search?client_id=' + CLIENT_ID + '&client_secret=' + CLIENT_SECRET + '&ll=' + this.lat + ',' + this.long + '&query=' + this.title + '&v=20170801';
 
 
     $.getJSON(URL, function (json) {
@@ -199,12 +194,10 @@ function popInfoWindow(marker, infowindow) {
             //assign the current mark to the window
             infowindow.marker = marker;
 
-            if (this.url == undefined) {
-                this.url = "Not provided"
+            if (this.url === undefined) {
+                this.url = "Not provided";
             }
-            infowindow.setContent('<div><b>' + marker.title + '</b></div>'
-                + '<div><b>' + this.address + '</b></div>'
-                + '<a href="' + this.url + ' ">' + this.url + '</a><br>');
+            infowindow.setContent('<div><b>' + marker.title + '</b></div>' + '<div><b>' + this.address + '</b></div>' + '<a href="' + this.url + ' ">' + this.url + '</a><br>');
             // + '<div><img src="' + streetviewUrl + '"></div>');
             infowindow.open(map, marker);
             // Make sure the marker property is cleared if the infowindow is closed.
@@ -230,12 +223,6 @@ function showListings() {
     map.fitBounds(bounds);
 }
 
-// This function will loop through the listings and hide them all.
-function hideListings() {
-    for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(null);
-    }
-}
 
 
 //Creates a new marker
@@ -337,6 +324,18 @@ var koViewModel = function (locations) {
         google.maps.event.trigger(this.marker, 'click');
 
     };
+
+    this.showall = function () {
+        self.markers.forEach(function (marker) {
+            marker.setMap(map);
+        });
+    };
+
+    this.hideall = function (){
+        self.markers.forEach(function (marker) {
+            marker.setMap(null);
+        });
+    }
 
 
 };

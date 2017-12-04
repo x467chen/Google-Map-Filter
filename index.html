@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -34,8 +35,8 @@
             <hr>
         </div>
         <div>
-            <input id="show-listings" class="w3-btn w3-teal w3-hover-grey w3-round" type="button" value="Show Markers">
-            <input id="hide-listings" class="w3-button w3-teal w3-hover-grey w3-round" type="button"
+            <input id="show-listings" data-bind="click: showall" class="w3-btn w3-teal w3-hover-grey w3-round" type="button" value="Show Markers">
+            <input id="hide-listings" data-bind="click: hideall" class="w3-button w3-teal w3-hover-grey w3-round" type="button"
                    value="Hide Markers">
         </div>
     </div>
