@@ -9,6 +9,11 @@ Through this project, I am more familiar with MVVM pattern by implementing Knock
 
 ## Installation
 1. [Live Demo](https://x467chen.github.io/Google-Map-Filter/) 
+2.Clone the github repository using the cmd:
+``` xml
+git clone https://github.com/x467chen/Google-Map-Filter
+```
+3. Open the index.html(Make sure the Wifi is working, otherwise it will cause error to grab data from APIs)
 
 ![Alt text](https://github.com/x467chen/Google-Map-Filter/blob/master/demo/demo.jpg "Optional title")
 
